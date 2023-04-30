@@ -1,0 +1,7 @@
+FROM quay.io/minio/minio
+ENV MINIO_ROOT_USER ROOTUSER
+ENV MINIO_ROOT_PASSWORD CHANGEME123
+EXPOSE 9000
+EXPOSE 9090
+VOLUME /data
+CMD ["server", "/data", "--console-address", ":9090"]
